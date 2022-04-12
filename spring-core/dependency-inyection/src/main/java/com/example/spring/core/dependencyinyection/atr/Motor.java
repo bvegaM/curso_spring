@@ -11,10 +11,8 @@ public class Motor {
 
     private Integer modelo;
 
-    public Motor(@Value("ducati") String marca,@Value("1986") Integer modelo) {
-        super();
-        this.marca = marca;
-        this.modelo = modelo;
+    public Motor(){
+
     }
 
     @Override
@@ -29,6 +27,7 @@ public class Motor {
         return marca;
     }
 
+    @Value("ducati")
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -37,6 +36,7 @@ public class Motor {
         return modelo;
     }
 
+    @Value("1986")
     public void setModelo(Integer modelo) {
         this.modelo = modelo;
     }
