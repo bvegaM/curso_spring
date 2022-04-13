@@ -4,6 +4,7 @@ import com.example.spring.core.dependencyinyection.atr.Coche;
 import com.example.spring.core.dependencyinyection.atr.Motor;
 import com.example.spring.core.dependencyinyection.profiles.EnviromentService;
 import com.example.spring.core.dependencyinyection.qualifiers.*;
+import com.example.spring.core.dependencyinyection.scopes.EjemploScopeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -17,8 +18,10 @@ public class DependencyInyectionApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
-        EnviromentService enviromentService = context.getBean(EnviromentService.class);
-        log.info("EnviromentService: {}", enviromentService.getEnviroment().get());
+        EjemploScopeService ejemploScopeService = context.getBean(EjemploScopeService.class);
+        EjemploScopeService ejemploScopeService2 = context.getBean(EjemploScopeService.class);
+        log.info("EjemploScopeService: {}", ejemploScopeService.equals(ejemploScopeService2));
+        log.info("EjemploScopeService: {}", ejemploScopeService == ejemploScopeService2);
     }
 
 }
