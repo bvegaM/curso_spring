@@ -8,6 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
+/* Estas tres anotaciones es lo mismo que solamente poner la anotacion @SpringBootApplication
+*@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+*/
 public class DependencyInyectionApplication {
 
     private static final Logger log = LoggerFactory.getLogger(DependencyInyectionApplication.class);

@@ -13,6 +13,6 @@ public class AreaCalculateService {
     private List<Figure> figures;
 
     public Optional<Double> calcAreas(){
-        return Optional.of(figures.stream().mapToDouble(figure -> figure.calculateArea().get()).sum());
+        return Optional.of(figures.stream().mapToDouble(figure -> figure.calculateArea().isPresent()?figure.calculateArea().get():0.0).sum());
     }
 }
