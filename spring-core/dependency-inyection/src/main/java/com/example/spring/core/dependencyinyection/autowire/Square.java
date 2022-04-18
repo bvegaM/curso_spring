@@ -8,7 +8,7 @@ import java.util.Optional;
 @Component
 public class Square implements Figure{
 
-    @Value("2")
+    @Value("${square.side:2}")
     private Double side;
 
     @Override
