@@ -1,13 +1,11 @@
 package com.example.spring.core.dependencyinyection;
 
-import com.example.spring.core.dependencyinyection.lifecycle.ExplicitBean;
-import com.example.spring.core.dependencyinyection.lifecycle.LifeCycleBean;
+import com.example.spring.core.dependencyinyection.aop.TargetObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class DependencyInyectionApplication {
@@ -16,6 +14,9 @@ public class DependencyInyectionApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+        TargetObject targetObject = context.getBean(TargetObject.class);
+        targetObject.doSomething();
+        targetObject.validate();
     }
 
 }
