@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 
 
 @Component
-@Lazy(false) // si el bean padre tiene una dependencia y el padre es un eager, sus bean dependientes seran eager asi esten como lazy
+@Lazy // si el bean padre tiene una dependencia y el padre es un eager, sus bean dependientes seran eager asi esten como lazy
 public class BeanA {
     private static final Logger log = LoggerFactory.getLogger(BeanA.class);
 

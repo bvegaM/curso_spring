@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-//@Lazy -- se ejecuta solamente si es que se inyecta si es lazy(false) se ejecuta inmediatamente
+@Lazy(false) // se ejecuta solamente si es que se inyecta si es lazy(false) se ejecuta inmediatamente
 //@Scope("prototype") -- recordemos de pre destroy no se ejecuta para beans de tipo prototype
 public class LifeCycleBean implements BeanNameAware, InitializingBean, DisposableBean {
 
