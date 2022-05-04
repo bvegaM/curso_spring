@@ -10,17 +10,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(0)
-public class MyAspect {
+@Order(1)
+public class MyAspect2 {
 
-    private static final Logger log = LoggerFactory.getLogger(MyAspect.class);
+    private static final Logger log = LoggerFactory.getLogger(MyAspect2.class);
 
     @Before("execution(* com.example.spring.core.dependencyinyection.aop.TargetObject.*(..))")
     public void beforeAdvice(JoinPoint joinPoint) {
-        log.info("0 modifiers {}", joinPoint.getSignature().getModifiers());
-        log.info("0 method {}", joinPoint.getSignature().getName());
-        log.info("0 target class {}", joinPoint.getTarget().getClass().getName());
-        log.info("0 args {}", joinPoint.getArgs());
-        log.info("0 Before advice");
+        log.info("1 modifiers {}", joinPoint.getSignature().getModifiers());
+        log.info("1 method {}", joinPoint.getSignature().getName());
+        log.info("1 target class {}", joinPoint.getTarget().getClass().getName());
+        log.info("1 args {}", joinPoint.getArgs());
+        log.info("1 Before advice");
     }
 }
