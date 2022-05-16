@@ -9,6 +9,7 @@ public class TargetObject {
 
     private static final Logger log = LoggerFactory.getLogger(TargetObject.class);
 
+    @Devs4jCache
     public void doSomething() {
         log.info("doSomething()");
     }
