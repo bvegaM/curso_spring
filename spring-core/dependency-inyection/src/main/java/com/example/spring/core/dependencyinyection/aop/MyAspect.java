@@ -15,7 +15,7 @@ public class MyAspect {
 
     private static final Logger log = LoggerFactory.getLogger(MyAspect.class);
 
-    @Before("execution(* com.example.spring.core.dependencyinyection.aop.TargetObject.*(..))")
+    @Before("PointcutExample.targetMethod()")
     public void beforeAdvice(JoinPoint joinPoint) {
         log.info("0 modifiers {}", joinPoint.getSignature().getModifiers());
         log.info("0 method {}", joinPoint.getSignature().getName());
